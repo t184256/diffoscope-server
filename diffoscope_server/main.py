@@ -52,8 +52,8 @@ def create_app(config=None):
         os.makedirs(FILES_FOLDER, exist_ok=True)
         os.makedirs(HASHES_FOLDER, exist_ok=True)
         r = '<pre>'
-        for f in os.listdir(FILES_FOLDER):
-            us = os.listdir(os.path.join(FILES_FOLDER, f))
+        for f in sorted(os.listdir(FILES_FOLDER)):
+            us = sorted(os.listdir(os.path.join(FILES_FOLDER, f)))
             if not us:
                 continue
             r += '<table style="border: 1px solid black">'
